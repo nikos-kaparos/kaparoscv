@@ -192,7 +192,7 @@ h1{
 }
 
 
-#achievements-section {
+/* #achievements-section {
     margin-bottom: 50px;
     padding: 0 20px;
 }
@@ -200,6 +200,54 @@ h1{
 #achievements-section h2 {
     color: #008F11;
     margin-left: 360px;
+    margin-bottom: 30px;
+}
+
+
+.achievements-text-p1,
+.achievements-text-p2 {
+    color: white;
+    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: left;
+
+    max-width: 800px;
+    margin: 0 auto 40px 360px;  center + spacing 
+
+    line-height: 1.6;
+    white-space: normal; 
+}
+
+
+@media (max-width: 1024px) {
+    .achievements-text-p1,
+    .achievements-text-p2 {
+        font-size: 18px;
+        max-width: 700px;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .achievements-text-p1,
+    .achievements-text-p2 {
+        font-size: 16px;
+        max-width: 100%;
+    }
+} 
+
+*/
+
+
+#achievements-section {
+    margin-bottom: 50px;
+    padding: 0 20px;
+}
+
+#achievements-section h2 {
+    color: #008F11;
+    text-align: center;      /* align with content */
+    margin-left: 0;         /* remove hardcoded value */
     margin-bottom: 30px;
 }
 
@@ -212,28 +260,38 @@ h1{
     text-align: left;
 
     max-width: 800px;
-    margin: 0 auto 40px 360px; /* center + spacing */
-
+    margin: 0 auto 40px auto; /* center block horizontally */
     line-height: 1.6;
-    white-space: normal; /* allow wrapping */
+    white-space: normal;
+    padding: 0 15px;          /* inner spacing for mobile */
 }
-
 
 /* Tablet */
 @media (max-width: 1024px) {
+    #achievements-section h2 {
+        text-align: center;
+    }
+
     .achievements-text-p1,
     .achievements-text-p2 {
         font-size: 18px;
-        max-width: 700px;
+        max-width: 90%;
+        margin: 0 auto 30px auto;
     }
 }
 
 /* Mobile */
 @media (max-width: 600px) {
+    #achievements-section h2 {
+        text-align: center;
+    }
+
     .achievements-text-p1,
     .achievements-text-p2 {
         font-size: 16px;
         max-width: 100%;
+        margin: 0 auto 20px auto;
+        padding: 0 10px;
     }
 }
 
