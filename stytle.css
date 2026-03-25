@@ -469,3 +469,402 @@ h1{
 
 
 
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono&display=swap");
+
+:root {
+    --vivaMagenta: #BB2649;
+    --green: #008F11;
+    --dark: #232e33;
+    --black: #111;
+}
+
+/* ===== RESET & BASE ===== */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Lato, sans-serif;
+    margin: 0;
+    background-color: var(--dark);
+    overflow-x: hidden;
+}
+
+/* ===== NAVBAR ===== */
+#navbar {
+    width: 100%;
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1em 0;
+    flex-wrap: wrap;
+    gap: 0.5em;
+}
+
+/* ===== HOME / INTRO ===== */
+.home {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+}
+
+#intro li a {
+    text-decoration: none;
+    color: white;
+    padding-right: 1.5em;
+    position: relative;
+    transition: all ease-in-out 250ms;
+    font-size: clamp(0.85rem, 2vw, 1rem);
+}
+
+#intro li a::after {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 0.4em;
+    width: 0%;
+    background-color: var(--vivaMagenta);
+    bottom: -1em;
+    transition: all ease-in-out 250ms;
+}
+
+#intro li a:hover::after {
+    width: 60%;
+}
+
+#intro li a:hover {
+    color: var(--vivaMagenta);
+}
+
+#intro li:first-child {
+    margin-right: auto;
+    margin-left: 1.5em;
+}
+
+/* ===== PROFILE IMAGE ===== */
+.center {
+    width: clamp(80px, 15vw, 160px);
+    height: auto;
+    display: flex;
+    margin: clamp(40px, 8vw, 120px) auto 0 auto;
+    border-radius: 50%;
+    border: 7px solid white;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* ===== PAGE HEADINGS ===== */
+h1 {
+    text-align: center;
+    padding: 0 1rem;
+}
+
+/* ===== CONSOLE / TYPEWRITER ===== */
+.hidden {
+    opacity: 0;
+}
+
+.console-container {
+    font-family: 'Dejavu sans mono', monospace;
+    font-weight: bold;
+    font-size: clamp(1rem, 4vw, 2em);
+    text-align: center;
+    width: 90%;
+    max-width: 600px;
+    color: white;
+    position: relative;
+    margin: clamp(20px, 5vw, 60px) auto 0 auto;
+    padding: 0 1rem;
+}
+
+.console-underscore {
+    display: inline-block;
+    position: relative;
+    top: 10px;
+    left: 10px;
+}
+
+/* ===== ABOUT SECTION ===== */
+#about-section {
+    background-color: black;
+    width: 100%;
+    padding: 2rem 1rem;
+}
+
+.about-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.about-content h1 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 1.4;
+    color: white;
+    font-family: 'Dejavu sans mono', monospace;
+    font-style: normal;
+    margin-top: 2rem;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.about-content p {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+    line-height: 1.8;
+    font-size: clamp(15px, 2.5vw, 18px);
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 20px 24px;
+    border-left: 4px solid var(--green);
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== DOWNLOAD BUTTON ===== */
+.download-bnt {
+    border-radius: 5px;
+    font: 16px/30px "opensans-bold", sans-serif;
+    background: #1e852f;
+    display: block;           /* block ώστε το margin: auto να δουλεύει */
+    width: fit-content;       /* μόνο όσο χρειάζεται */
+    text-decoration: none;
+    color: #fff;
+    padding: 12px 28px;
+    border: none;
+    cursor: pointer;
+    margin: 1.5rem auto 2rem auto; /* κεντράρει οριζόντια, spacing πάνω-κάτω */
+    transition: background 250ms ease, color 250ms ease;
+}
+
+.download-bnt:hover {
+    background-color: white;
+    color: var(--green);
+}
+
+/* Mobile: full width για πιο εύκολο tap */
+@media screen and (max-width: 768px) {
+    .download-bnt {
+        width: calc(100% - 2rem);
+        text-align: center;
+        padding: 14px 16px;
+    }
+}
+
+/* ===== ACHIEVEMENTS SECTION ===== */
+#achievements-section {
+    padding: 2rem 1rem 3rem 1rem;
+    width: 100%;
+}
+
+#achievements-section h2 {
+    color: var(--green);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    padding: 0 1rem;
+}
+
+.achievements-text-p1,
+.achievements-text-p2 {
+    color: white;
+    font-size: clamp(15px, 2.5vw, 20px);
+    font-family: 'Open Sans', sans-serif;
+    text-align: left;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto 2rem auto;
+    line-height: 1.7;
+    padding: 0 1rem;
+}
+
+/* ===== FOOTER ===== */
+#footer-section {
+    background: var(--black);
+    width: 100%;
+    padding: 3rem 1rem 0 1rem;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+.footer-content h1 {
+    font-size: clamp(1.4rem, 4vw, 2.1rem);
+    font-weight: 500;
+    text-transform: capitalize;
+    line-height: 1.5;
+    color: var(--green);
+    padding: 0 1rem;
+}
+
+.footer-content p {
+    max-width: 500px;
+    width: 100%;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: clamp(14px, 2vw, 16px);
+    color: #4e4d4d;
+    padding: 0 1rem;
+}
+
+.footer-content a {
+    color: #4e4d4d;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+#footer-section .socials {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem 0 3rem 0;
+    padding: 0;
+}
+
+#footer-section .socials li {
+    margin: 0;
+}
+
+#footer-section .socials li a {
+    text-decoration: none;
+    color: var(--green);
+    font-size: clamp(22px, 5vw, 30px);
+    transition: opacity 200ms ease;
+}
+
+#footer-section .socials li a:hover {
+    opacity: 0.7;
+}
+
+#footer-section .credit {
+    background-color: #000;
+    width: 100%;
+    padding: 20px 1rem;
+    text-align: center;
+}
+
+#footer-section .credit p {
+    text-align: center;
+    font-size: 14px;
+    text-transform: capitalize;
+    color: white;
+    margin: 0;
+}
+
+#footer-section .credit p a {
+    color: #44bae8;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+/* ===== RESPONSIVE: TABLET ===== */
+@media screen and (max-width: 1024px) {
+    #intro li:first-child {
+        margin-left: 1rem;
+    }
+
+    #intro li a {
+        padding-right: 1rem;
+    }
+
+    .about-content p {
+        max-width: 90%;
+    }
+
+    .achievements-text-p1,
+    .achievements-text-p2 {
+        max-width: 90%;
+    }
+}
+
+/* ===== RESPONSIVE: MOBILE ===== */
+@media screen and (max-width: 768px) {
+    ul {
+        justify-content: center;
+        padding: 0.75em 0.5em;
+        gap: 0.25em;
+    }
+
+    #intro li:first-child {
+        width: 100%;
+        text-align: center;
+        margin-left: 0;
+        margin-bottom: 0.5em;
+    }
+
+    #intro li a {
+        padding-right: 0.75em;
+        font-size: 0.9rem;
+    }
+
+    .center {
+        width: clamp(70px, 25vw, 110px);
+        border-width: 4px;
+    }
+
+    .about-content p {
+        max-width: 100%;
+        padding: 16px;
+        font-size: 15px;
+        border-left: 3px solid var(--green);
+        line-height: 1.6;
+    }
+
+    .about-content h1 {
+        font-size: 1.4rem;
+    }
+
+    .download-bnt {
+        width: calc(100% - 2rem);
+        text-align: center;
+        padding: 12px 16px;
+    }
+
+    .achievements-text-p1,
+    .achievements-text-p2 {
+        max-width: 100%;
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    #footer-section .socials {
+        gap: 0.75rem;
+    }
+}
+
+/* ===== RESPONSIVE: SMALL MOBILE ===== */
+@media screen and (max-width: 480px) {
+    #intro li a {
+        font-size: 0.8rem;
+        padding-right: 0.5em;
+    }
+
+    .console-container {
+        font-size: 1rem;
+    }
+
+    .about-content h1 {
+        font-size: 1.2rem;
+    }
+}
